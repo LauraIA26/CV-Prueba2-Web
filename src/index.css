@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import './redesign.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Custom smooth glass hover and glow effects */
+.glow-card {
+  box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.15), 0 0 10px -5px rgba(139, 92, 246, 0.15);
+}
+
+.glow-card-hover:hover {
+  box-shadow: 0 0 35px 0px rgba(56, 189, 248, 0.25), 0 0 20px 0px rgba(139, 92, 246, 0.25);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.glow-purple {
+  box-shadow: 0 0 40px -10px rgba(168, 85, 247, 0.3);
+}
+
+.glow-blue {
+  box-shadow: 0 0 40px -10px rgba(37, 99, 235, 0.4);
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-slow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
